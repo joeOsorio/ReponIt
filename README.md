@@ -4,7 +4,7 @@
 
 Proyecto final de **36282 Programación Orientada a Objetos**, Universidad Autónoma de Baja California (UABC), Facultad de Ciencias Químicas e Ingeniería.
 
-![Java](https://img.shields.io/badge/Java-11%2B-orange?logo=openjdk)
+![Java](https://img.shields.io/badge/Java-21%2B-orange?logo=openjdk)
 ![Terminal](https://img.shields.io/badge/interfaz-terminal-black)
 ![Licencia](https://img.shields.io/badge/licencia-MIT-blue)
 
@@ -81,8 +81,7 @@ ReponIt/
 ├── LICENSE
 ├── docs/
 │   ├── UML.drawio          Diagrama de clases (editable)
-│   ├── UML.svg             Exportado, el que se muestra en este README
-│   └── UML.png
+│   └── UML.svg             Exportado, el que se muestra en este README
 ├── src/
 │   ├── Main.java           Menú, lectura segura y test() oculto
 │   ├── Producto.java       Clase abstracta base
