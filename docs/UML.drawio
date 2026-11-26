@@ -1,9 +1,12 @@
 <mxfile host="65bd71144e">
     <diagram name="Proyecto Final - Despensa" id="despensa">
-        <mxGraphModel dx="2868" dy="1293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2400" pageHeight="3200" math="0" shadow="0">
+        <mxGraphModel dx="3625" dy="3231" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2400" pageHeight="3200" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="0n4sny0lGpVybRb5uxFH-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+                    <mxGeometry height="2820" width="1960" x="-10" y="10" as="geometry"/>
+                </mxCell>
                 <mxCell id="main" parent="1" style="swimlane;fontStyle=1;fontSize=14;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Main" vertex="1">
                     <mxGeometry height="733" width="500" x="640" y="40" as="geometry"/>
                 </mxCell>
@@ -125,7 +128,7 @@
                     <mxGeometry height="46" width="400" y="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="pere" parent="1" style="swimlane;fontStyle=1;fontSize=14;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=55;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Perecedero" vertex="1">
-                    <mxGeometry height="427" width="420" x="40" y="2356" as="geometry"/>
+                    <mxGeometry height="427" width="420" x="20" y="2356" as="geometry"/>
                 </mxCell>
                 <mxCell id="perea" parent="pere" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontSize=12;" value="+ TIPO: String = &amp;quot;PERECEDERO&amp;quot; {static, final}&lt;div&gt;+ FORMATO_FECHA: DateTimeFormatter {static, final}&lt;/div&gt;&lt;div&gt;- fechaCaducidad: LocalDate&lt;/div&gt;" vertex="1">
                     <mxGeometry height="63" width="420" y="55" as="geometry"/>
