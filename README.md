@@ -69,7 +69,7 @@ ReponIt junta las tres cosas en un solo lugar:
 | **Manejo de excepciones** | Lectura segura de datos y líneas de archivo mal formadas |
 | **Fechas** | `java.time.LocalDate` y `DateTimeFormatter` |
 | **Terminal amigable** | Colores ANSI y recuadros (`Consola`) |
-| **UML** | Diagrama de clases en `docs/UML.drawio` (draw.io) |
+| **UML** | Diagrama de clases en `docs/UML.drawio` (draw.io), exportado a SVG y PNG |
 
 **Principios de diseño:** cada clase tiene una sola responsabilidad (`GestorArchivos` solo lee y escribe, `Consola` solo imprime, `HiloCaducidad` solo vigila fechas). `Despensa` no sabe nada de archivos ni de pantalla, y `ListaSuper` trabaja con `Producto` sin conocer sus subclases.
 
@@ -80,7 +80,9 @@ ReponIt/
 ├── README.md
 ├── LICENSE
 ├── docs/
-│   └── UML.drawio          Diagrama de clases
+│   ├── UML.drawio          Diagrama de clases (editable)
+│   ├── UML.svg             Exportado, el que se muestra en este README
+│   └── UML.png
 ├── src/
 │   ├── Main.java           Menú, lectura segura y test() oculto
 │   ├── Producto.java       Clase abstracta base
@@ -103,25 +105,17 @@ ReponIt/
 
 ## Diseño de clases
 
-```
-                 «interface» IGuardable
-                          ▲
-                          ┆ implementa
-      Unidad ◄──── «abstract» Producto ◄──────────────┐
-                    ▲       ▲        ▲                │
-         ┌──────────┘       │        └─────────┐      │
-    Perecedero        NoPerecedero          Limpieza  │
-                                                      │
- Main ──► Despensa ◇─────────────────────────────────┤ guarda 0..*
-  │          ▲   ◆── Lista<Producto> ◆── Nodo         │
-  │          │                                        │
-  ├──► HiloCaducidad (Runnable) ── vigila ─┘          │
-  ├──► ListaSuper ──── pendientes ────────────────────┘
-  ├┄┄► GestorArchivos ┄┄ «crea» Producto
-  └┄┄► Consola
-```
+![Diagrama de clases UML de ReponIt](docs/UML.svg)
 
-El diagrama completo, con atributos, métodos y la leyenda de relaciones, está en [`docs/UML.drawio`](docs/UML.drawio). Ábrelo en [app.diagrams.net](https://app.diagrams.net) o con la extensión de draw.io en VS Code.
+*Da clic en la imagen para verla en tamaño completo.* El archivo editable está en [`docs/UML.drawio`](docs/UML.drawio); ábrelo en [app.diagrams.net](https://app.diagrams.net) o con la extensión de draw.io en VS Code.
+
+**Resumen de relaciones:**
+
+- `Perecedero`, `NoPerecedero` y `Limpieza` **heredan** de la clase abstracta `Producto`, que **implementa** `IGuardable`.
+- `Despensa` **agrega** productos (◇): se crean afuera, en `Main` o `GestorArchivos`, y se le pasan.
+- `Despensa` se **compone** de una `Lista<Producto>` (◆), y la `Lista` de sus `Nodo`.
+- `HiloCaducidad` **implementa** `Runnable` y **vigila** la misma `Despensa` que usa `Main`.
+- `ListaSuper` **referencia** los productos pendientes; `GestorArchivos` y `Consola` se **usan** como utilidades (dependencias).
 
 ## Compilar y ejecutar
 
